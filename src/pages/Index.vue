@@ -64,6 +64,11 @@ export default {
             width: 250px;
             height: 250px;
             margin-bottom: 10px;
+
+            @media (max-width: 400px) {
+                width: 175px;
+                height: 175px;
+            }
         }
     }
 
@@ -111,6 +116,10 @@ export default {
 
             @media (max-width: 1440px) {
                 font-size: 60px;
+
+                @media (max-width: 400px) {
+                    font-size: 50px;
+                }
             }
         }
 
@@ -122,6 +131,10 @@ export default {
 
             @media (max-width: 1440px) {
                 font-size: 100px;
+
+                @media (max-width: 400px) {
+                    font-size: 80px;
+                }
             }
         }
 
@@ -144,6 +157,10 @@ export default {
     .section {
         margin: 50px;
 
+        @media (max-width: 400px) {
+            margin: 50px 20px;
+        }
+
         h2 {
             color: #11CDE2;
             font-family: Roboto;
@@ -155,23 +172,18 @@ export default {
         #post-cards {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: space-around;
             margin: 0 auto;
             margin-top: 50px;
-            width: 65%;
-
-            @media (max-width: 1920px) {
-                width: 80%;
-            }
+            width: 80%;
 
             @media (max-width: 1440px) {
-                width: 100%;
                 flex-direction: column;
                 align-items: center;
+                width: 100%;
 
                 .post-card {
                     width: auto;
-                    max-width: 400px;
                     margin-bottom: 30px;
                 }
             }

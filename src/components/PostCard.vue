@@ -9,6 +9,7 @@
 <style lang="scss" scoped>
     .post-card {
         width: 30%;
+        max-width: 400px;
         height: 100%;
         background-color: #11CDE2;
         border-radius: 20px;
