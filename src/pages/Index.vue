@@ -40,18 +40,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    #hero, img {
+    #hero, #hero > img {
         width: 100%;
         height: 100vh;
     }
 
     #hero {
         position: relative;
-    }
 
-    img {
-        object-fit: cover;
-        filter: brightness(50%);
+        img {
+            object-fit: cover;
+            filter: brightness(50%);
+        }
     }
 
     #image-placeholder {
@@ -59,6 +59,12 @@ export default {
         width: 350px;
         height: 350px;
         border-radius: 50%;
+
+        @media (max-width: 1440px) {
+            width: 250px;
+            height: 250px;
+            margin-bottom: 10px;
+        }
     }
 
     #hero-content {
@@ -69,12 +75,22 @@ export default {
         display: flex;
         flex-direction: column;
         white-space: nowrap;
+
+        @media (max-width: 1440px) {
+            flex-direction: column;
+            white-space: initial;
+            width: 90%;
+        }
     }
 
     #hero-upper {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media (max-width: 1440px) {
+            flex-direction: column;
+        }
     }
 
     #hero-left {
@@ -92,6 +108,10 @@ export default {
         span {
             color: #eee;
             font-size: 96px;
+
+            @media (max-width: 1440px) {
+                font-size: 60px;
+            }
         }
 
         h1 {
@@ -99,6 +119,14 @@ export default {
             color: #11CDE2;
             font-size: 144px;
             font-weight: 900;
+
+            @media (max-width: 1440px) {
+                font-size: 100px;
+            }
+        }
+
+        @media (max-width: 1440px) {
+            text-align: center;
         }
     }
 
@@ -107,6 +135,10 @@ export default {
         font-family: Montserrat;
         font-size: 72px;
         text-align: center;
+
+        @media (max-width: 1440px) {
+            display: none;
+        }
     }
 
     .section {
@@ -118,6 +150,31 @@ export default {
             font-size: 48px;
             font-weight: 500;
             text-align: center;
+        }
+
+        #post-cards {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0 auto;
+            margin-top: 50px;
+            width: 65%;
+
+            @media (max-width: 1920px) {
+                width: 80%;
+            }
+
+            @media (max-width: 1440px) {
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+
+                .post-card {
+                    width: auto;
+                    max-width: 400px;
+                    margin-bottom: 30px;
+                }
+            }
         }
 
         .button-container {
@@ -137,14 +194,5 @@ export default {
                 color: #11CDE2;
             }
         }
-    }
-
-    #post-cards {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 0 auto;
-        margin-top: 50px;
-        width: 75%;
     }
 </style>
