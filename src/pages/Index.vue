@@ -23,7 +23,7 @@
                 <PostCard v-for="idx in 3" :key="idx" />
             </div>
             <div class="button-container">
-                <button>Read More</button>
+                <g-link to="/blog"><button>Read More</button></g-link>
             </div>
         </section>
     </div>
