@@ -6,5 +6,13 @@
 
 module.exports = {
   siteName: 'Yahya Sohail',
-  plugins: []
+  plugins: [
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'blog/**/*.md',
+        typeName: 'Post'
+      }
+    }
+  ]
 }

@@ -1,12 +1,16 @@
 <template>
     <div class="post-brief">
-        <h2>Post Title Would Go Here</h2>
-        <span class="post-date">27 November 2020</span>
-        <div class="excerpt">
-            <p>A really interesting post excerpt goes here. This post excerpt will probably be a couple of sentences long. Like this text.</p>
-        </div>
+        <h2>{{ post.title }}</h2>
+        <span class="post-date">{{ post.date }}</span>
+        <div class="excerpt">{{ post.excerpt }}</div>
     </div>
 </template>
+
+<script>
+export default {
+    props: ['post']
+}
+</script>
 
 <style scoped>
     .post-brief {
