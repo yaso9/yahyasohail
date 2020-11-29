@@ -173,18 +173,14 @@ export default {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
-            margin: 0 auto;
             margin-top: 50px;
-            width: 80%;
 
-            @media (max-width: 1440px) {
+            @media (max-width: 1024px) {
                 flex-direction: column;
-                align-items: center;
-                width: 100%;
 
                 .post-card {
-                    width: auto;
-                    margin-bottom: 30px;
+                    width: 95%;
+                    margin: 20px auto;
                 }
             }
         }
