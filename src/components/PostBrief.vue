@@ -1,6 +1,6 @@
 <template>
     <div class="post-brief">
-        <h2>{{ post.title }}</h2>
+        <g-link :to="post.path"><h2>{{ post.title }}</h2></g-link>
         <span class="post-date">{{ post.date }}</span>
         <div class="excerpt">{{ post.excerpt }}</div>
     </div>
@@ -17,6 +17,10 @@ export default {
         padding-bottom: 25px;
         border-bottom: 2px solid #11CDE2;
         margin-bottom: 25px;
+    }
+
+    a {
+        text-decoration: none;
     }
 
     h2 {

@@ -5,14 +5,21 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Yahya Sohail',
+  siteName: "Yahya Sohail",
   plugins: [
     {
-      use: '@gridsome/source-filesystem',
+      use: "@gridsome/source-filesystem",
       options: {
-        path: 'blog/**/*.md',
-        typeName: 'Post'
-      }
-    }
-  ]
-}
+        path: "blog/**/*.md",
+        typeName: "Post",
+      },
+    },
+  ],
+  templates: {
+    Post: [
+      {
+        path: "/blog/:title",
+      },
+    ],
+  },
+};
