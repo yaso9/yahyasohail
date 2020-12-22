@@ -20,7 +20,7 @@
         <section class="section">
             <h2>Checkout What I’ve Written</h2>
             <div id="post-cards">
-                <PostCard v-for="idx in 3" :key="idx" />
+                <PostCard v-for="edge in $page.allPost.edges" :post="edge.node" :key="edge.node.id" />
             </div>
             <div class="button-container">
                 <g-link to="/blog"><button>Read More</button></g-link>
@@ -28,6 +28,21 @@
         </section>
     </div>
 </template>
+
+<page-query>
+query {
+  allPost(filter: {featured: {eq: true}}) {
+    edges {
+      node {
+        id
+        path
+        title
+        excerpt
+      }
+    }
+  }
+}
+</page-query>
 
 <script>
 import PostCard from '~/components/PostCard.vue'
