@@ -188,6 +188,7 @@ export default {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
+            align-items: center;
             margin-top: 50px;
 
             @media (max-width: 1024px) {
@@ -210,6 +211,7 @@ export default {
                 border-radius: 5px;
                 padding: 5px 10px;
                 text-align: center;
+                cursor: pointer;
 
                 font-family: Roboto;
                 font-weight: 500;

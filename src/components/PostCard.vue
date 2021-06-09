@@ -22,6 +22,7 @@ export default {
 
     .post-card {
         width: 30%;
+        max-width: 500px;
         height: 100%;
         background-color: #11CDE2;
         border-radius: 20px;
@@ -48,5 +49,11 @@ export default {
         font-weight: 500;
         font-size: 18px;
         margin: 0 20px;
+    }
+
+    @media (max-width: 1024px) {
+        .post-card {
+            width: 100%;
+        }
     }
 </style>
