@@ -188,11 +188,12 @@ export default {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
-            align-items: center;
+            align-items: stretch;
             margin-top: 50px;
 
             @media (max-width: 1024px) {
                 flex-direction: column;
+                align-items: center;
 
                 .post-card {
                     width: 95%;

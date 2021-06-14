@@ -23,7 +23,6 @@ export default {
     .post-card {
         width: 30%;
         max-width: 500px;
-        height: 100%;
         background-color: #11CDE2;
         border-radius: 20px;
         font-family: Roboto;

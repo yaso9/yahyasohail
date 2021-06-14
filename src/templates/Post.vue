@@ -36,7 +36,12 @@ export default {
         margin-bottom: 20px;
     }
 
-    #post-body p {
+    #post-body {
+        margin-bottom: 400px;
+    }
+
+    #post-body * {
         margin-bottom: 10px;
+        line-height: 135%;
     }
 </style>
