@@ -1,7 +1,7 @@
 <template>
     <g-link :to="post.path">
         <div class="post-card">
-            <g-image src="~/assets/images/hero.jpg" />
+            <g-image :src="post.featuredImage" />
             <h3>{{ post.title }}</h3>
             <p>{{ post.excerpt }}</p>
         </div>

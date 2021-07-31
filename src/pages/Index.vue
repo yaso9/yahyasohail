@@ -36,6 +36,7 @@ query {
       node {
         id
         path
+        featuredImage
         title
         excerpt
       }

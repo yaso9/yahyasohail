@@ -1,5 +1,6 @@
 ---
 title: hello world 4
+featuredImage: https://via.placeholder.com/400
 date: 2020-06-24T00:10:00+08:00
 featured: false
 ---
