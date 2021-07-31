@@ -6,6 +6,7 @@
 
 module.exports = {
   siteName: "Yahya Sohail",
+  siteUrl: "https://yahyasohail.com",
   plugins: [
     {
       use: "@gridsome/source-filesystem",
@@ -14,6 +15,9 @@ module.exports = {
         typeName: "Post",
       },
     },
+    {
+      use: "@gridsome/plugin-sitemap",
+    }
   ],
   templates: {
     Post: [
