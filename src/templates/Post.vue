@@ -78,4 +78,8 @@ export default {
     #post-body ol, #post-body ul {
         list-style-position: inside;
     }
+
+    #post-body a {
+        color: #11CDE2;
+    }
 </style>
