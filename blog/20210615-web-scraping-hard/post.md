@@ -26,17 +26,17 @@ The general process to scrape skins would be something like this:
 
 I implemented this in Python and downloaded 2,500 skins. It seemed to work fine, and I got to work implementing my GAN.
 
-## Disaster Strikes
+## Disaster strikes
 While working with my newly collected Minecraft skins I noticed something peculiar. The same skins seemed to be popping up more often than I would have expected them to in a sample of 2,500 unique skins when I viewed them. The only way I could explain it was if the skins were not unique and some skins were contained multiple times. To check this, I wrote a bash one liner (`md5sum * 2>/dev/null | awk '{print $1}' | sort -u | wc -l`) to check how many unique skins I had. Apparently, I only had about 200 unique skins.
 
 What could have caused this? I began to check my script, and after banging my head against my desk a bunch I realized what went wrong. It appeared like some pages were being scraped multiple times. This caused skins to be downloaded more then once. The script appeared to be incrementing the page number each time it downloaded the page of skins, but sometimes this seemed to not work.
 
 To debug this further I opened the page in my web browser. I tried changing the number of the page in the URL and discovered some interesting behavior I hadn't seen before. When I changed the page number in the URL, sometimes it would go to the next page instead of the page I specified in the URL. This was really weird and no matter how far I dug into it, I couldn't figure out how the server could have even known what the current page was (to be able to send the next page instead of the specified page) because that information didn't seem to be included in the request. I realized that changing the page number in the URL wasn't going to be reliable and I had to return to the drawing board.
 
-## Finding Skin Pages Another Way
+## Finding skin pages another way
 Using the Planet Minecraft website to find skin pages (the page dedicated to a single skin that has a download link for it) would not work, so I had to find another way to find skin pages. I thought that maybe I could use Google or another search engine and limit the search results to a particular path. On Google, this can be done by searching `site:https://www.planetminecraft.com/skin`. Scraping Google seemed like a bad idea cause I know they start asking the user to complete a captcha if requests are made too quickly. Google's search API limits searches pretty aggressively. Using Google to find skins wasn't a viable solution.
 
-I realized that instead of using Google to find skins, I could find the skins the same way Google does. Let me explain: Websites can post a sitemap, an XML file with a list of all the content on a website with some metadata, to make it easier for search engines to find content on the site. Planet Minecraft has a sitemap, and it contains links to every single page (including skin pages) on the entire site. Now I just had to modify my script to use the sitemap. The new process looked like this:
+I realized that instead of using Google to find skins, I could find the skins the same way Google does. Let me explain: Websites can post a sitemap, an XML file with a list of all the content on a website with some metadata, to make it easier for search engines to find content on the site. Planet Minecraft has a sitemap, and it contains links to every page (including skin pages) on the entire site. Now I just had to modify my script to use the sitemap. The new process looked like this:
 
 1. Download the sitemap
 2. Parse the sitemap and find all the URLs
@@ -44,4 +44,4 @@ I realized that instead of using Google to find skins, I could find the skins th
 4. Select a number of URLs equal to the number of skins I want
 6. Download each of the collected URLs, find the URL to download the skin using Beautiful Soup, and download the skin.
 
-I implemented this in Python and downloaded 2,500 skins. I used my bash oneline to check how many unique skins there were, and this time there were actually 2,500 unique skins.
+I implemented this in Python and downloaded 2,500 skins. I used my bash one liner to check how many unique skins there were, and this time there were actually 2,500 unique skins.

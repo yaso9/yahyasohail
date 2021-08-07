@@ -26,7 +26,7 @@ There are two major players on the client side for web based dapps: Web3 and Eth
 
 I initially tried to use Truffle, but I had some technical issues and couldn't get it to work on my machine, so I used Hardhat. I picked Ethers on the client side. I chose these libraries because of their popularity. As a beginner building a relatively simple project, the availability of material to learn from was a more important consideration than technical details.
 
-## Dapp Limitations
+## Dapp limitations
 I uncovered some limitations while developing my password manager dapp. First, all information stored on the blockchain is publicly accessible. I had initially hoped that there was some way to encrypt the information so that only one user could read it built in to Ethereum, but that doesn't seem to be the case. I instead ended up having to encrypt the information myself and ask the user for a key to use when they opened the app.
 
 Another issue I ran into is gas costs. Gas is used as a way to quantify how computationally expensive an operation on the Ethereum network is. Gas costs are determined by supply and demand. They are especially high for storing data on the blockchain (something ETH Passwords has to do a lot). When executing a method on a smart contract, a user must pay an amount of gas to allow that smart contract to run. The exception to this is `view` and `pure` functions that don't actually make any changes to the blockchain, and therefore can be handled entirely client side.
