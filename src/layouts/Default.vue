@@ -19,7 +19,7 @@ query {
 }
 </static-query>
 
-<style lang="scss" scoped>
+<style lang="scss">
     #top-bar {
         background-color: #11CDE2;
         padding: 10px 30px;
@@ -66,6 +66,14 @@ query {
         p {
             margin-top: 1em ;
             margin-bottom: 1em ;
+        }
+
+        ol, ul {
+            list-style-position: inside;
+        }
+
+        a {
+            color: #11CDE2;
         }
     }
 </style>

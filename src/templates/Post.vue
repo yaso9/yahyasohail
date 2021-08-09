@@ -74,12 +74,4 @@ export default {
         margin-bottom: 10px;
         line-height: 135%;
     }
-
-    #post-body ol, #post-body ul {
-        list-style-position: inside;
-    }
-
-    #post-body a {
-        color: #11CDE2;
-    }
 </style>
