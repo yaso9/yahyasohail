@@ -5,7 +5,7 @@
             <div id="hero-content">
                 <div id="hero-upper">
                     <div id="hero-left">
-                        <div id="image-placeholder"></div>
+                        <g-image id="image" src="~/my-face.jpg"/>
                     </div>
                     <div id="hero-right">
                         <span>Hello, My Name Is</span>
@@ -67,14 +67,13 @@ export default {
     #hero {
         position: relative;
 
-        img {
+        & > img {
             object-fit: cover;
             filter: brightness(50%);
         }
     }
 
-    #image-placeholder {
-        background-color: #c4c4c4;
+    #image {
         width: 350px;
         height: 350px;
         border-radius: 50%;

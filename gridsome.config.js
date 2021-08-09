@@ -7,6 +7,7 @@
 module.exports = {
   siteName: "Yahya Sohail",
   siteUrl: "https://yahyasohail.com",
+  icon: "./src/my-face.jpg",
   plugins: [
     {
       use: "@gridsome/source-filesystem",
@@ -17,7 +18,7 @@ module.exports = {
     },
     {
       use: "@gridsome/plugin-sitemap",
-    }
+    },
   ],
   templates: {
     Post: [
